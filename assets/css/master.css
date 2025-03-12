@@ -2612,7 +2612,9 @@ top: -5em;
   top: 15em;
   }
 
-
+#butterfly2 {
+cursor: pointer;
+}
 
 .computer-2 {
   width:150px;
