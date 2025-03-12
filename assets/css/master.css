@@ -2558,11 +2558,11 @@ section.big-block .client-logo {padding:10%;}
             100% { background-position: 0% 50%; }
         }
 
+
 .start-btn {
   z-index: 9999;
   position: relative;
-  top: -60em;
-  right: -9em;
+ transform: translate(0);
   border: none;
   background-color: transparent;
 }
