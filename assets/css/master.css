@@ -155,7 +155,7 @@ iframe, embed, object {max-width: 100%;}
 
 h1, h2, h3, h4, h5, h6 {color: #9725f5;margin: 20px 0 10px 0;font-style: normal;font-family: 'Montserrat', sans-serif;}
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {line-height: 1.2em;}
-h1 { font-size: 56px;}
+h1 { font-size: 42px;}
 h2 { font-size: 36px;}
 h3 { font-size: 24px;}
 h4 { font-size: 18px;}
@@ -163,9 +163,9 @@ h5 { font-size: 16px;}
 h6 { font-size: 12px;}
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a { color: #9725f5;}
 h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5:hover a, h6 a:hover { color: #9725f5;}
-p a {}
-p a:hover {color:9725f5;}
-p {letter-spacing: normal;line-height: 24px;color: #888;font-weight:400;font-family: 'Open Sans', sans-serif;}
+
+p a:hover {color: #9725f5;}
+p {letter-spacing: normal;line-height: 24px;color: #888;font-weight:400;}
 a {text-decoration: none;color:#212121;}
 a:hover, a:focus, a:active {outline: none;text-decoration: none;color:#9725f5;}
 ul {list-style: disc;}
@@ -216,7 +216,7 @@ color: #fe4f4f;font-size: 12px;}
 
 /* Sections */
 
-section {padding-top:120px;padding-bottom:120px;position: relative;z-index: 10;background:#f5f5f5;overflow: hidden;}
+section {padding-top:120px;padding-bottom:120px;position: relative; display: flex; z-index: 10;background:#f5f5f5;overflow: hidden;}
 section.lg-section{padding-top:150px;padding-bottom:150px;}
 .section-heading {text-align: center;margin: auto;float: none;padding-bottom: 20px;}
 
@@ -1151,6 +1151,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f79d00', end
 .btn-animate:hover span {padding: 0 17px 0 0;}
 .btn-animate:hover i {transition: opacity 0.2s, right 0.2s;opacity: 1;top: 50%;right: 0px;}
 
+
 /* Icons */
 
 .tr-icon {display: inline-block;font-style: normal !important;font-weight: normal !important;font-variant: normal !important;text-transform: none !important;speak: none;line-height: 1;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
@@ -1677,6 +1678,10 @@ img.mfp-img{padding:40px 0px 0;}
  .portfolio-nav a > span i{font-size:30px;}
 }
 
+
+@media only screen and (min-width: 350px) {
+
+}
 /* Pricing Table */
 
 .pricing-box {padding: 40px;position: relative;}
@@ -2472,22 +2477,6 @@ section.big-block .client-logo {padding:10%;}
 
 /*collage*/
 
-.flowers-1 {
-  position: relative;
-  top: -28em;
-  right: -14.5em;
-}
-
-
-
-.computer-1 {
-  position: relative;
-  top: -35em;
-  right: 20em;
-  z-index: 8888;
-  height: 150px;
-  width: 150px;
-}
 
 .pulsate-fwd {
 	-webkit-animation: pulsate-fwd 1.5s ease-in-out infinite both;
@@ -2559,29 +2548,6 @@ section.big-block .client-logo {padding:10%;}
         }
 
 
-.start-btn {
-  z-index: 9999;
-  position: relative;
- transform: translate(0);
-  border: none;
-  background-color: transparent;
-}
-
-.name {
-  position: relative;
-  top: -45em;
-  right: 18em;
-  z-index: 9999;
-  height: 100%;
-  width: 400px;
-}
-
-.bg-1 {
-  background-repeat: no-repeat;
-  backgrond-size: cover !imporant;
-  background-position:  right !important;
-
-}
 
 .bg-2 {
   background-repeat: repeat;
@@ -2596,35 +2562,8 @@ section.big-block .client-logo {padding:10%;}
   }
 
 
-.opened{
-  background-image: url('assets/images/bg_1.gif');
-}
 
-.butterfly-1 {
-z-index: 0;
-left: -5em;
-top: -5em;
-}
 
-.butterfly-2 {
-  position: absolute;
-  left: 15em;
-  top: 15em;
-  }
-
-#butterfly2 {
-cursor: pointer;
-	height: 250px;
-	width: 250px;
-	transform: translate(-15em, -30em);
-}
-
-.computer-2 {
-  width:150px;
-  height: 150px;
-position: absolute;
-top: 27em;
-}
 
 .nav-buttons button {
   background-color: #336EF9;
@@ -2858,14 +2797,6 @@ top: -2.5em;
   }
 }
 
-.monitor-text {
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  width: 100w !important;
-  height: 100vh !important;
-
-}
 #text-container-room {
   text-align: center;
   padding: 50px;
@@ -2935,12 +2866,6 @@ background-size: cover;
 widthÍ: 100vw;
 }
 
-.full-bg {
-  background-image: url('assets/images/collage/4.png');
-  display: flex;
-  align-items: flex-start;
-}
-
 
 
 
@@ -2950,7 +2875,7 @@ widthÍ: 100vw;
    font-weight: 600;
    font-style: normal;
   font-size: 1em;
-  color: #fff;
+  color: #153c4d !important;
   position: relative;
   top: 2em;
   left: -45em;
@@ -2990,7 +2915,7 @@ widthÍ: 100vw;
 
  }
 
- .keyboard-backgroung {
+ .keyboard-background {
   z-index: 0;
  }
 
@@ -3157,7 +3082,7 @@ widthÍ: 100vw;
 }
 
 #bibliography {
-  background-color: #f5f5f5;
+  background-color: #fbfaf9;
   margin-bottom: 5em;
 }
 
