@@ -54,7 +54,7 @@
 
     <!--== Header Start ==-->
     <nav class="navbar navbar-default navbar-fixed  bootsnav on no-full">
-      <!--== Start Top Search ==-->
+      <!--== Start Top Search ==--
       <div class="fullscreen-search-overlay" id="search-overlay"> <a href="#" class="fullscreen-close"
           id="fullscreen-close-button"><i class="icofont icofont-close"></i></a>
         <div id="fullscreen-search-wrapper">
@@ -67,9 +67,9 @@
           </form>
         </div>
       </div>
-      <!--== End Top Search ==-->
+      -== End Top Search ==-
 
-        <!--== End Atribute Navigation ==-->
+        --== End Atribute Navigation ==-->
 
         <!--== Start Header Navigation ==-->
         <div class="navbar-header">
@@ -100,13 +100,9 @@
     </nav>
     <!--== Header End ==-->
     <!--== Parallax Slide 01 Start ==-->
-    <section class="fixed-bg bg sbg-1 remove-padding view-height-100vh"
-      style="background-image: url(assets/images/collage/bg_1.gif);" id="creative" data-stellar-background-ratio="0.2">
+    <section class="fixed-bg bg sbg-1 hidden remove-padding view-height-100vh"
+    id="creative" data-stellar-background-ratio="0.2">
       <div class="container relative view-height-100vh">
-        <img src="assets/images/collage/11.png">
-        <a href="#summary"><img src="assets/images/collage/11_btn.gif"  id="butterfly2"></a>
-
-        <img class="computer-2" src="assets/images/collage/computer_2.png">
         <div class="simple-content-slider text-center">
           <div class="simple-content-slider-text">
             <div class="simple-content-text-inner">
@@ -114,17 +110,16 @@
                 <div class="col-md-6">
                   <div class="text-center">
                     <div class="intro-text hidden text-focus-in" id="toggleElement">
-                      <p><b>Ada Lovelace</b> saw the future before it arrived. She imagined a world where machines could
+                      <p style="text-wrap: initial"><b>Ada Lovelace</b> saw the future before it arrived. She imagined a world where machines could
                         create, compute, and inspire. Her vision shaped modern computing, making her <b>the first
-                          programmer in history.</b>
+                          programmer in history.</b></p>
+                          <button class="more-button gradient-text hidden" id="toggleElement2" href="#corporate">learn
+                            more</button>
                     </div>
-                    <button class="more-button gradient-text hidden" id="toggleElement2" href="#corporate">learn
-                      more</button>
-                    <img src="assets/images/collage/ada_large.png">
-                    <img class="flowers-1" src="assets/images/collage/ada_flowers.png">
-                    <img class="computer-1 pulsate-fwd" src="assets/images/collage/computer.png"><button
-                      id="toggleButton" class="start-btn computer-1 gradient-text">Start</button>
-                    <img class="name" src="assets/images/collage/ada_name.gif">
+
+                      <button
+  id="toggleButton" class="start-btn  gradient-text">Start</button>
+
 
                   </div>
                 </div>
@@ -134,24 +129,48 @@
         </div>
       </div>
     </section>
+
     <!--== Parallax Slide 01 End ==-->
     <script>
-      const toggleButton = document.getElementById('toggleButton');
+      const toggleButton = document.getElementById('creative');
       const toggleElement = document.getElementById('toggleElement');
-      const butterfly2 = document.getElementById('butterfly2');
       const toggleElement2 = document.getElementById('toggleElement2');
 
       toggleButton.addEventListener('click', () => {
         toggleElement.classList.remove('hidden');
         toggleElement.classList.toggle('visible');
         toggleElement.classList.remove('visible');
-        butterfly2.classList.toggle('hidden');
         toggleElement2.classList.remove('hidden');
         toggleElement2.classList.toggle('visible');
 
 
-
       });
+      document.addEventListener("DOMContentLoaded", function() {
+
+    function toggleMobileBg() {
+        let mobileBg = document.getElementById("bgMobile");
+        let largeBg = document.getElementById("creative");
+
+        if (window.innerWidth > 350 && window.innerWidth < 800) {
+            mobileBg.classList.remove("hidden");
+            mobileBg.classList.add("visible");
+            largeBg.classList.remove("hidden");
+            largeBg.classList.add("visible");
+        } else {
+            mobileBg.classList.add("hidden");
+            mobileBg.classList.remove("visible");
+            largeBg.classList.remove("hidden");
+            largeBg.classList.add("visible");
+        }
+    }
+
+    // Run on page load
+    toggleMobileBg();
+
+    // Run on window resize
+    window.addEventListener("resize", toggleMobileBg);
+});
+
     </script>
     <!----  <section class="holographic-section">
         <div class="holographic-box"></div>
@@ -203,11 +222,12 @@
   </section>
   <!-== Parallax Slide 02 End ==-->
     <div class="text-effect-wrapper" id="summary">
-      <div class="scrolling-text-container" style="background-color: #b989f6 ">
+      <div class="scrolling-text-container">
         <p class="scrolling-text">Ada was the first programmer</p>
-      </div> <!--== Parallax Slide 03 Start ==-->
-      <section class="fixed-bg  focus-in-expand monitor-text view-height-100vh"
-        style="background-image: url(assets/images/collage/vasemonitor.gif);" id="game"
+      </div>
+      </div><!--== Parallax Slide 03 Start ==-->
+      <section class="fixedBg  focus-in-expand monitor-text view-height-100vh"
+        id="game"
         data-stellar-background-ratio="0.2">
         <div class="container relative view-height-100vh">
           <div class="simple-content-slider text-center">
@@ -227,51 +247,386 @@
                     future.</p>
 
                 </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class=" text-center all-padding-40">
-                      <script>
-                        document.addEventListener("DOMContentLoaded", function () {
-                          let texts = document.querySelectorAll(".text-slide");
-                          let current = 0;
 
-                          function showNextText() {
-                            texts[current].style.opacity = 0;
-                            texts[current].style.display = "none";
-                            current = (current + 1) % texts.length;
-                            texts[current].style.display = "block";
-                            setTimeout(() => {
-                              texts[current].style.opacity = 1;
-                            }, 50);
-                            setTimeout(showNextText, 5000);
-                          }
-                          setTimeout(showNextText, 5000);
-                        });
-                      </script>
-
-
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+      <style>
+
+        .scrolling-text-container {
+          background-color: #b989f6;
+          opacity: 0.7;
+        }
+        .fixedBg, .fixed-bg {
+    background-image: url('assets/images/collage/monitorvase.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.bg {
+ background-image: url('assets/images/collage/bg_hero_3.gif') !important;
+ background-size: cover;
+    background-position: 50% 30% !important;
+    background-repeat: no-repeat;
+    height: 100vh !important;
+    width: auto !important;
+    white-space: nowrap;
+    display: flex !important;
+    flex-direction: column !important;
+    }
+
+.white-color {
+    color: #dbd8d1 !important;
+
+}
+
+#toggleButton {
+  position: absolute !important;
+  left: -9em !important;
+  top: -13em !important;
+  height: 100px !important;
+  width: 100px !important;
+  border: none;
+  padding: 10em !important;
+}
+
+.intro-text {
+  position: absolute !important;
+  left: -5em !important;
+  top: -22em !important;
+  height: 250px !important;
+  width: 250px !important;
+  border: none;
+  padding: 10em !important;
+}
+
+.intro-text.visible {
+  position: absolute !important;
+  height: 250px !important;
+  width: 250px !important;
+  border: none;
+}
+
+.more-button {
+  padding-right: 10px !important;
+}
+
+#game {
+  background-image: url('assets/images/collage/monitorvase_2.gif');
+  background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.footer {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background: #222; /* Change as needed */
+    color: #fff;
+    font-size: 14px;
+    position: relative; /* Ensure it's positioned properly */
+    bottom: 0;
+    clear: both; /* Fix floating issues */
+}
+
+.footer-section {
+  background-image: url(assets/images/collage/ada_flowers.png);
+  background-size: contain;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .wrapper {
+    height:auto !important;
+    width: 100% !important;
+    clear: both !important;
+    margin: 0 auto !important;
+  }
+
+  #toggleButton {
+  position: absolute !important;
+  left: -9em !important;
+  top: -13em !important;
+  height: 100px !important;
+  width: 100px !important;
+  border: none;
+  padding: 10em !important;
+}
+
+section {
+        position: relative; /* Remove fixed if used */
+        height: 100vh !important;
+        transform: translate(0, 0) !important;
+        font-size: 1em;
+        padding: 12px;
+        width: 100vw !important;
+    }
+    #entertainment {
+    background-image: url('assets/images/collage/monitors_mobile.gif');
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat;
+
+}
+    .fixedBg {
+        background-image: url('assets/images/collage/monitorvase_mobile.gif') !important;
+    }
+
+    .bg {
+ background-image: url('assets/images/collage/bg_hero_2.gif');
+ background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat;
+
+    }
+
+  #automobile {
+    background-image: url('assets/images/collage/bg_mix_mobile.gif') !important;
+  }
+
+  #about p{
+    width: 80% !important;
+transform: translate(-250px, 0) !important;
+padding: 2em !important;
+text-align: justify !important;
+font-size: 1em !important;
+    }
+
+ .gallery {
+  width: 100% !important;
+transform: translate(-10px, 0) !important;
+padding: 2em !important;
+ }
+
+.about-text a, #bibliography a {
+  font-size: 0.8em !important;
+}
+
+#bibliography  {
+  text-align: justify !important;
+  align-items: center !important;
+  transform: translate(-10px, 0) !important;
+padding: 2em !important;
+}
+
+    .room {
+      width: 100% !important;
+  height: 100vh !important;
+
+    }
+
+    #text-container-room {
+      position: absolute !important;
+      top: 15em !important;
+left: -45em;
+width: 50% !important;
+
+    }
+
+    .hidden-text.visible {
+      width: 700px !important;
+      transform: translate(30px, -613px) !important;
+      margin-bottom: 2em !important;
+      font-size: 1.5em !important;
+    }
+
+    dotlottie-player {
+      bottom: 20em !important;
+      left: 15em !important;
+      position: absolute !important;
+    }
+
+
+.about-container, .room-container {
+width: 100vw !important;}
+
+
+
+.impact-container {
+  width: 100vw !important;
+}
+
+.container {
+  width: 100vw !important;
+
+}
+
+
+.impact-text {
+width: 25em !important;
+position: absolute !important;
+text-align: justify !important;
+}
+
+.section-heading {
+  font-size: 2em !important;
+}
+
+img {
+        max-width: 100%;
+        height: auto !important;
+    }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    height:auto !important;
+    width: 100% !important;
+    clear: both !important;
+    margin: 0 auto !important;
+  }
+
+  .start-container {
+    position: relative; /* Makes it the reference for absolute positioning */
+    width: 100%;
+    background-image:  url('assets/images/collage/hero_mobile_bg_2.gif');
+    height: 100vh; /* Full height */
+    background-size: cover;
+    background-position: center;
+  }
+
+#toggleElement {
+  position: absolute !important;
+  transform: translate(-25%, 50%) !important;
+ }
+
+ .more-button {
+  top: 5em !important;
+ }
+
+ #game {
+  background-image: url('assets/images/collage/monitorvase_mobile.gif');
+  background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#game p {
+ transform: translate(-23%, 20%)!important;
+}
+
+p.impact-text {
+  position: absolute !important;
+  background-color: #153c4d !important;
+  color: #dbd8d1 !important;
+ text-wrap: initial;
+ transform: translate(-2%, 20%) !important;
+height: 16em !important;
+}
+
+section {
+        position: relative; /* Remove fixed if used */
+        height: 100vh !important;
+        transform: translate(0, 0) !important;
+        font-size: 1em;
+        padding: 12px;
+    }
+
+    .fixedBg {
+        background-image: url('assets/images/collage/monitorvase_mobile.gif') !important;
+    }
+
+  #automobile {
+    background-image: url('assets/images/collage/bg_mix_mobile.gif') !important;
+  }
+
+  #about p{
+    width: 80% !important;
+transform: translate(-250px, 0) !important;
+padding: 2em !important;
+margin-left: 2.2em !important;
+text-align: justify !important;
+font-size: 0.8em !important;
+    }
+
+
+ .gallery {
+  width: 100% !important;
+transform: translate(-10px, 0) !important;
+padding: 2em !important;
+ }
+
+.about-text a, #bibliography a {
+  font-size: 0.8em !important;
+}
+
+#bibliography  {
+  text-align: justify !important;
+  align-items: center !important;
+  transform: translate(0, 0) !important;
+padding: 0.5em !important;
+}
+
+    .room {
+      width: 100% !important;
+  height: 100vh !important;
+
+    }
+
+    #text-container-room {
+      position: absolute !important;
+      top: 15em !important;
+left: -45em;
+width: 50% !important;
+
+    }
+
+    .hidden-text.visible {
+      width: 200px !important;
+      transform: translate(30px, -613px) !important;
+      margin-bottom: 2em !important;
+    }
+
+    dotlottie-player {
+      bottom: 20em !important;
+      position: absolute !important;
+    }
+
+.about-container, .room-container {
+width: 100vw !important;}
+
+
+
+.impact-container {
+  width: 100vw !important;
+  height: auto !important;
+}
+
+.container {
+  width: 100vw !important;
+
+}
+
+.impact-text {
+width: 25em !important;
+position: absolute !important;
+text-align: justify !important;
+}
+
+.section-heading {
+  font-size: 2em !important;
+}
+
+
+}
+      </style>
       <!--== Parallax Slide 03 End ==-->
       <!--<section class="video-ada"><img src="assets/images/collage/ada_lovelace.gif"></section>-->
       <!--== Parallax Slide 04 Start ==-->
       <section class="fixed-bg remove-padding transition-none room view-height-100vh"
         style="background-image: url(assets/images/collage/computers.gif);" id="entertainment"
         data-stellar-background-ratio="0.2">
-        <div class="container relative view-height-100vh">
+        <div class="container room-container relative view-height-100vh">
           <div class="simple-content-slider text-center view-height-100vh">
             <div class="simple-content-slider-text">
               <div class="simple-content-text-inner">
                 <div class="row">
                   <div class="col-md-4">
                     <div class="text-center">
-                      <div class="text-container-room" id="text-container-room">
+                      <div class=" text-container-room" id="text-container-room">
                         <p class="story-text hidden-text">In 1842, Ada Lovelace translated a paper about Charles
                           Babbage’s Analytical Engine.</p>
                         <p class="story-text hidden-text story-text-2">She didn’t just translate it—she expanded it with
@@ -330,9 +685,9 @@
             <div class="simple-content-slider-text">
               <div class="simple-content-text-inner">
                 <div class="row">
-                  <div class="col-md-6">
-                    <div class="text-center impact-container all-padding-40">
-                      <h1 class="section-heading mt-0 impact-heading gradient-text  view-height-100vh">Impact</h1>
+                  <div class="col-md-6 impact-container">
+                    <div class="text-center">
+                      <h1 class="section-heading mt-0 impact-heading gradient-text ">Impact</h1>
                       <p class="impact-text">Ada’s insights laid the foundation for modern programming and artificial
                         intelligence.</p>
 
@@ -381,7 +736,7 @@
               <div class="simple-content-text-inner">
                 <div class="row">
                   <div class="col-md-6">
-                    <div class="text-center all-padding-40 white-color">
+                    <div class="text-center all-padding-40">
                       <p class="impact-text focus-in-expand">The Ada programming language was named in her honor,
                         recognizing her contribution to computing.</p>
 
@@ -406,9 +761,9 @@
                   <div class="col-md-offset-6">
                     <div class="white-bg text-center all-padding-40">
                       <h1 class="font-60px line-height-70 raleway-font mt-0 xs-font-30px">Architecture</h1>
-                      <p class="impact-text focus-in-expand">Today, Ada Lovelace’s legacy lives on in AI research,
+                      <p class="impact-text white-color focus-in-expand">Today, Ada Lovelace’s legacy lives on in AI research,
                         software development, and digital innovation.</p>
-                      <p class="impact-text focus-in-expand">Her vision continues to inspire new generations of
+                      <p class="impact-text white-color focus-in-expand">Her vision continues to inspire new generations of
                         thinkers, proving that technology and creativity go hand in hand.</p>
                     </div>
                   </div>
@@ -423,7 +778,7 @@
 
     <section class="fixed-bg remove-padding transition-none" id="about"
       style="background-image: url('assets/images/collage/bg-about.png');">
-      <div class="container relative view-height-100vh">
+      <div class="container relative view-height-100vh move-text">
         <div class="text-center about-container">
           <h2 class="typewriter section-heading">About This Project</h2>
           <p class="about-text">This digital experience explores Ada Lovelace Byron’s heritage through an interactive, multimedia collage to sustain cultural heritage through innovative digital practices. </p>
@@ -503,15 +858,19 @@
           </ul>
           <img class="pen" src="assets/images/collage/12.png">
         </div>
+
       </div>
+
     </section>
 
     <!--== Footer Start ==-->
-    <footer class="footer" id="contact">
-      <p style="color: #9725f5;">&copy; 2025 <a
-          href="https://www.linkedin.com/in/szilvia-bar%C3%A1th-630ab717a/">@scottfairy</a></p>
-      <p><a href="mailto:szilvia.barat@gmail.com">get in touch</a></p>
-    </footer>
+    <section class="footer-section">
+      <footer class="footer" id="contact">
+        <p style="color: #9725f5;">&copy; 2025 <a
+            href="https://www.linkedin.com/in/szilvia-bar%C3%A1th-630ab717a/">@scottfairy</a></p>
+        <p><a href="mailto:szilvia.barat@gmail.com">get in touch</a></p>
+      </footer>
+      </section>
     <!--== Footer End ==-->
 
     <!--== Go to Top  ==-->
@@ -520,7 +879,36 @@
 
   </div>
   <!--== Wrapper End ==-->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let texts = document.querySelectorAll(".text-slide");
+      let current = 0;
 
+      function showNextText() {
+        texts[current].style.opacity = 0;
+        texts[current].style.display = "none";
+        current = (current + 1) % texts.length;
+        texts[current].style.display = "block";
+        setTimeout(() => {
+          texts[current].style.opacity = 1;
+        }, 50);
+        setTimeout(showNextText, 5000);
+      }
+      setTimeout(showNextText, 5000);
+    });
+
+ //---   document.addEventListener("DOMContentLoaded", function() {
+//let gameSection = document.getElementById("game");
+//let bgContainer = document.getElementByClassName("fixedBg");
+
+//if (window.innerWidth <= 768) {
+//gameSection.style.backgroundImage = "url('assets/images/collage/monitorvase-mobile.gif')";
+//bgContainer.style.minHeight = "100vh";
+//bgContainer.style.backgroundImage = "url('assets/images/collage/monitorvase-mobile.gif')";
+//}
+//});
+
+  </script>
   <!--== Javascript Plugins ==-->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/smoothscroll.js"></script>
